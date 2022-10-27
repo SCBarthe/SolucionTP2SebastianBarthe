@@ -43,21 +43,25 @@ namespace TP2SebastianBarthe
             this.lblMegaPixel = new System.Windows.Forms.Label();
             this.cboMarca = new System.Windows.Forms.ComboBox();
             this.cboCategoria = new System.Windows.Forms.ComboBox();
+            this.lblPrecio = new System.Windows.Forms.Label();
+            this.nudPrecio = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCodigo
             // 
             this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(46, 36);
+            this.lblCodigo.Location = new System.Drawing.Point(46, 32);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(40, 13);
             this.lblCodigo.TabIndex = 0;
             this.lblCodigo.Text = "Código";
+            this.lblCodigo.Click += new System.EventHandler(this.lblCodigo_Click);
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(44, 79);
+            this.lblNombre.Location = new System.Drawing.Point(44, 74);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(44, 13);
             this.lblNombre.TabIndex = 1;
@@ -66,7 +70,7 @@ namespace TP2SebastianBarthe
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(35, 122);
+            this.lblDescripcion.Location = new System.Drawing.Point(35, 114);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(63, 13);
             this.lblDescripcion.TabIndex = 2;
@@ -75,7 +79,7 @@ namespace TP2SebastianBarthe
             // lblImagenUrl
             // 
             this.lblImagenUrl.AutoSize = true;
-            this.lblImagenUrl.Location = new System.Drawing.Point(39, 172);
+            this.lblImagenUrl.Location = new System.Drawing.Point(39, 153);
             this.lblImagenUrl.Name = "lblImagenUrl";
             this.lblImagenUrl.Size = new System.Drawing.Size(55, 13);
             this.lblImagenUrl.TabIndex = 3;
@@ -83,30 +87,30 @@ namespace TP2SebastianBarthe
             // 
             // txtCodigo
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(126, 36);
+            this.txtCodigo.Location = new System.Drawing.Point(126, 30);
             this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(100, 20);
+            this.txtCodigo.Size = new System.Drawing.Size(121, 20);
             this.txtCodigo.TabIndex = 0;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(126, 79);
+            this.txtNombre.Location = new System.Drawing.Point(126, 70);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(100, 20);
+            this.txtNombre.Size = new System.Drawing.Size(121, 20);
             this.txtNombre.TabIndex = 1;
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(126, 122);
+            this.txtDescripcion.Location = new System.Drawing.Point(126, 111);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(100, 20);
+            this.txtDescripcion.Size = new System.Drawing.Size(121, 20);
             this.txtDescripcion.TabIndex = 2;
             // 
             // txtImagenUrl
             // 
-            this.txtImagenUrl.Location = new System.Drawing.Point(126, 172);
+            this.txtImagenUrl.Location = new System.Drawing.Point(126, 149);
             this.txtImagenUrl.Name = "txtImagenUrl";
-            this.txtImagenUrl.Size = new System.Drawing.Size(100, 20);
+            this.txtImagenUrl.Size = new System.Drawing.Size(121, 20);
             this.txtImagenUrl.TabIndex = 3;
             // 
             // btnAceptar
@@ -134,7 +138,7 @@ namespace TP2SebastianBarthe
             // lblLente
             // 
             this.lblLente.AutoSize = true;
-            this.lblLente.Location = new System.Drawing.Point(49, 217);
+            this.lblLente.Location = new System.Drawing.Point(49, 223);
             this.lblLente.Name = "lblLente";
             this.lblLente.Size = new System.Drawing.Size(40, 13);
             this.lblLente.TabIndex = 6;
@@ -152,10 +156,11 @@ namespace TP2SebastianBarthe
             // cboMarca
             // 
             this.cboMarca.FormattingEnabled = true;
-            this.cboMarca.Location = new System.Drawing.Point(126, 217);
+            this.cboMarca.Location = new System.Drawing.Point(126, 220);
             this.cboMarca.Name = "cboMarca";
             this.cboMarca.Size = new System.Drawing.Size(121, 21);
             this.cboMarca.TabIndex = 8;
+            this.cboMarca.SelectedIndexChanged += new System.EventHandler(this.cboMarca_SelectedIndexChanged);
             // 
             // cboCategoria
             // 
@@ -165,11 +170,35 @@ namespace TP2SebastianBarthe
             this.cboCategoria.Size = new System.Drawing.Size(121, 21);
             this.cboCategoria.TabIndex = 9;
             // 
+            // lblPrecio
+            // 
+            this.lblPrecio.AutoSize = true;
+            this.lblPrecio.Location = new System.Drawing.Point(49, 187);
+            this.lblPrecio.Name = "lblPrecio";
+            this.lblPrecio.Size = new System.Drawing.Size(37, 13);
+            this.lblPrecio.TabIndex = 10;
+            this.lblPrecio.Text = "Precio";
+            // 
+            // nudPrecio
+            // 
+            this.nudPrecio.DecimalPlaces = 3;
+            this.nudPrecio.Location = new System.Drawing.Point(126, 182);
+            this.nudPrecio.Maximum = new decimal(new int[] {
+            100000000,
+            0,
+            0,
+            0});
+            this.nudPrecio.Name = "nudPrecio";
+            this.nudPrecio.Size = new System.Drawing.Size(120, 20);
+            this.nudPrecio.TabIndex = 11;
+            // 
             // frmCamaras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(354, 369);
+            this.Controls.Add(this.nudPrecio);
+            this.Controls.Add(this.lblPrecio);
             this.Controls.Add(this.cboCategoria);
             this.Controls.Add(this.cboMarca);
             this.Controls.Add(this.lblMegaPixel);
@@ -188,6 +217,7 @@ namespace TP2SebastianBarthe
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAgregar";
             this.Load += new System.EventHandler(this.frmCamaras_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -209,5 +239,7 @@ namespace TP2SebastianBarthe
         private System.Windows.Forms.Label lblMegaPixel;
         private System.Windows.Forms.ComboBox cboMarca;
         private System.Windows.Forms.ComboBox cboCategoria;
+        private System.Windows.Forms.Label lblPrecio;
+        private System.Windows.Forms.NumericUpDown nudPrecio;
     }
 }
